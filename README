@@ -1,0 +1,80 @@
+Instalação das Dependências
+
+# Instalar o Express (framework web para Node.js)
+npm install express
+
+# Instalar o Mongoose (ODM para MongoDB)
+npm install mongoose
+
+# Instalar o dotenv (para carregar variáveis de ambiente)
+npm install dotenv
+
+# Instalar o Nodemon (opcional - reinicia automaticamente o servidor ao salvar alterações)
+npm install nodemon --save-dev
+
+#Crie um arquivo .env na raiz do seu projeto e adicione as seguintes linhas:
+
+MONGODB_URI=mongodb://localhost:27017/seu_banco_de_dados
+Substitua seu_banco_de_dados pelo nome do seu banco de dados #MongoDB.
+
+Executando o Projeto
+No terminal do VS Code, execute os seguintes comandos para iniciar o servidor Node.js:
+# Iniciar o servidor
+node index.js
+# ou, se estiver utilizando o nodemon
+nodemon index.js
+
+
+Testar as Rotas da API: Para testar as rotas da API CRUD, você pode usar ferramentas como cURL, Postman, 
+ou até mesmo o próprio terminal do VS Code com o comando `curl`. Aqui estão alguns exemplos de como testar as rotas:
+
+   - **Listar Funcionários** (GET):
+     curl http://localhost:3000/api/funcionarios
+     ```
+
+   - **Inserir Funcionário** (POST):
+     
+     curl -X POST http://localhost:3000/api/funcionarios -H "Content-Type: application/json" -d '{"nome": "Nome do Funcionário", "cpf": "12345678900", "cargo": "Desenvolvedor"}'
+     ```
+
+   - **Atualizar Funcionário** (PUT)
+     curl -X PUT http://localhost:3000/api/funcionarios/12345678900 -H "Content-Type: application/json" -d '{"nome": "Novo Nome"}'
+     ```
+
+   - **Excluir Funcionário** (DELETE):
+     curl -X DELETE http://localhost:3000/api/funcionarios/12345678900
+     ```
+
+   Substitua os valores e os dados conforme necessário com os dados do seu contexto, para outros ativos 
+
+
+
+
+projeto-crud
+├── controllers
+│   ├── funcionarioController.js
+│   ├── notebookController.js
+│   ├── monitorController.js
+│   ├── tecladoController.js
+│   ├── mouseController.js
+│   ├── headsetController.js
+│   └── dockController.js
+├── models
+│   ├── Funcionario.js
+│   ├── Notebook.js
+│   ├── Monitor.js
+│   ├── Teclado.js
+│   ├── Mouse.js
+│   ├── Headset.js
+│   └── Dock.js
+├── routes
+│   ├── funcionarioRoutes.js
+│   ├── notebookRoutes.js
+│   ├── monitorRoutes.js
+│   ├── tecladoRoutes.js
+│   ├── mouseRoutes.js
+│   ├── headsetRoutes.js
+│   └── dockRoutes.js
+├── .env
+├── index.js
+└── package.json
